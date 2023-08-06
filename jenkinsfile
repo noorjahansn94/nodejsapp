@@ -1,0 +1,31 @@
+pipeline {
+    agent any
+    
+    
+    stages {
+        stage('checkout'){
+            steps{
+                git branch: 'main', url: 'https://github.com/noorjahansn94/nodejsapp.git'
+            }
+        }
+        stage('init') {
+            steps {
+                // Checkout the code from your repository
+          //  sh 'export PATH=$PATH:/var/jenkins_home/.nvm/versions/node/v18.17.0/bin' 
+            echo 'executing express'
+            nodejs('Node 10.17.0'){
+            //sh 'node -v'
+            //sh 'node app.js'
+            sh 'npm show express version'
+            sh 'npm install'
+            sh 'node app.js'
+            }
+            
+                
+            }
+        }
+        
+    }
+}
+        
+
