@@ -15,7 +15,6 @@ pipeline {
             //sh 'node -v'
             //sh 'node app.js'
             sh 'npm show express version'
-            sh 'which express'
             sh 'npm install'
             sh 'node app.js'
             }
