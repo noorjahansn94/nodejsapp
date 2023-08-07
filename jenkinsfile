@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('checkout'){
             steps{
-               git branch: 'main', credentialsId: 'ssh', url: 'https://github.com/noorjahansn94/nodejsapp.git'
+               git branch: 'main', url: 'https://github.com/noorjahansn94/nodejsapp.git'
             }
         }
         stage('build') {
